@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45C69F0C27834F8400BE8EA9 /* WikiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C69F0B27834F8400BE8EA9 /* WikiVC.swift */; };
 		45F22BAE277B259B00732827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F22BAD277B259B00732827 /* AppDelegate.swift */; };
 		45F22BB0277B259B00732827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F22BAF277B259B00732827 /* SceneDelegate.swift */; };
 		45F22BB2277B259B00732827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F22BB1277B259B00732827 /* ViewController.swift */; };
-		45F22BB5277B259B00732827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F22BB3277B259B00732827 /* Main.storyboard */; };
 		45F22BB7277B259E00732827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F22BB6277B259E00732827 /* Assets.xcassets */; };
 		45F22BBA277B259E00732827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F22BB8277B259E00732827 /* LaunchScreen.storyboard */; };
 		45F22BC5277B259E00732827 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F22BC4277B259E00732827 /* CountryTests.swift */; };
 		45F22BD0277B259E00732827 /* CountryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F22BCF277B259E00732827 /* CountryUITests.swift */; };
+		45F22BE0277B38CF00732827 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F22BDF277B38CE00732827 /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45C69F0B27834F8400BE8EA9 /* WikiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiVC.swift; sourceTree = "<group>"; };
 		45F22BAA277B259B00732827 /* Country.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Country.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F22BAD277B259B00732827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45F22BAF277B259B00732827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		45F22BB1277B259B00732827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		45F22BB4277B259B00732827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45F22BB6277B259E00732827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45F22BB9277B259E00732827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45F22BBB277B259E00732827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		45F22BCB277B259E00732827 /* CountryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F22BCF277B259E00732827 /* CountryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryUITests.swift; sourceTree = "<group>"; };
 		45F22BD1277B259E00732827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45F22BDF277B38CE00732827 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,9 @@
 			children = (
 				45F22BAD277B259B00732827 /* AppDelegate.swift */,
 				45F22BAF277B259B00732827 /* SceneDelegate.swift */,
+				45F22BE2277B3A8900732827 /* Model */,
 				45F22BB1277B259B00732827 /* ViewController.swift */,
-				45F22BB3277B259B00732827 /* Main.storyboard */,
+				45C69F0B27834F8400BE8EA9 /* WikiVC.swift */,
 				45F22BB6277B259E00732827 /* Assets.xcassets */,
 				45F22BB8277B259E00732827 /* LaunchScreen.storyboard */,
 				45F22BBB277B259E00732827 /* Info.plist */,
@@ -126,6 +129,14 @@
 				45F22BD1277B259E00732827 /* Info.plist */,
 			);
 			path = CountryUITests;
+			sourceTree = "<group>";
+		};
+		45F22BE2277B3A8900732827 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45F22BDF277B38CE00732827 /* Country.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +244,6 @@
 			files = (
 				45F22BBA277B259E00732827 /* LaunchScreen.storyboard in Resources */,
 				45F22BB7277B259E00732827 /* Assets.xcassets in Resources */,
-				45F22BB5277B259B00732827 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F22BE0277B38CF00732827 /* Country.swift in Sources */,
 				45F22BB2277B259B00732827 /* ViewController.swift in Sources */,
 				45F22BAE277B259B00732827 /* AppDelegate.swift in Sources */,
+				45C69F0C27834F8400BE8EA9 /* WikiVC.swift in Sources */,
 				45F22BB0277B259B00732827 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +308,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		45F22BB3277B259B00732827 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45F22BB4277B259B00732827 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		45F22BB8277B259E00732827 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,6 +442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Country/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Country/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
