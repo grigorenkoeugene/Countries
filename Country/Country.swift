@@ -9,10 +9,14 @@ import Foundation
 
 struct Country: Codable {
     let name: NameCountry
-    var flag: String?
+    var flags: FlagCountry
 }
 
 struct NameCountry: Codable {
     let common: String
+}
+
+struct FlagCountry: Codable {
+    let png: String
 }
 

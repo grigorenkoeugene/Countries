@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4569BD4927870AEA00031E53 /* ReadJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569BD4827870AE900031E53 /* ReadJSON.swift */; };
+		4569BD4E278718D000031E53 /* CastomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569BD4C278718D000031E53 /* CastomViewCell.swift */; };
+		4569BD4F278718D000031E53 /* CastomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4569BD4D278718D000031E53 /* CastomViewCell.xib */; };
 		45C69F0C27834F8400BE8EA9 /* WikiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C69F0B27834F8400BE8EA9 /* WikiVC.swift */; };
 		45F22BAE277B259B00732827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F22BAD277B259B00732827 /* AppDelegate.swift */; };
 		45F22BB0277B259B00732827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F22BAF277B259B00732827 /* SceneDelegate.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4569BD4827870AE900031E53 /* ReadJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSON.swift; sourceTree = "<group>"; };
+		4569BD4C278718D000031E53 /* CastomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastomViewCell.swift; sourceTree = "<group>"; };
+		4569BD4D278718D000031E53 /* CastomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastomViewCell.xib; sourceTree = "<group>"; };
 		45C69F0B27834F8400BE8EA9 /* WikiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiVC.swift; sourceTree = "<group>"; };
 		45F22BAA277B259B00732827 /* Country.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Country.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F22BAD277B259B00732827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				45F22BE2277B3A8900732827 /* Model */,
 				45F22BB1277B259B00732827 /* ViewController.swift */,
 				45C69F0B27834F8400BE8EA9 /* WikiVC.swift */,
+				4569BD4827870AE900031E53 /* ReadJSON.swift */,
+				4569BD4C278718D000031E53 /* CastomViewCell.swift */,
+				4569BD4D278718D000031E53 /* CastomViewCell.xib */,
 				45F22BB6277B259E00732827 /* Assets.xcassets */,
 				45F22BB8277B259E00732827 /* LaunchScreen.storyboard */,
 				45F22BBB277B259E00732827 /* Info.plist */,
@@ -243,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45F22BBA277B259E00732827 /* LaunchScreen.storyboard in Resources */,
+				4569BD4F278718D000031E53 /* CastomViewCell.xib in Resources */,
 				45F22BB7277B259E00732827 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +279,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				45F22BE0277B38CF00732827 /* Country.swift in Sources */,
+				4569BD4E278718D000031E53 /* CastomViewCell.swift in Sources */,
 				45F22BB2277B259B00732827 /* ViewController.swift in Sources */,
 				45F22BAE277B259B00732827 /* AppDelegate.swift in Sources */,
+				4569BD4927870AEA00031E53 /* ReadJSON.swift in Sources */,
 				45C69F0C27834F8400BE8EA9 /* WikiVC.swift in Sources */,
 				45F22BB0277B259B00732827 /* SceneDelegate.swift in Sources */,
 			);

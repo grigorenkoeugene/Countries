@@ -7,77 +7,68 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var myTable: UITableView!
-    var countryArray = [Country]()
-
+class ViewController: UIViewController {
+    
+    var JSON = ReadJSON()
+    
+    var tableVW: UITableView = {
+        var table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        return table
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        table()
-        self.view.addSubview(myTable)
-        
-        readJSON {
-            self.myTable.reloadData()
-        }
+        self.view.addSubview(tableVW)
+        constraintTable()
+        JSON.readJSON { self.tableVW.reloadData() }
     }
     
-    func table(){
-        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-        let height = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
-        myTable = UITableView(frame: CGRect(x: 0, y: height, width: displayWidth, height: displayHeight - height))
-        myTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        myTable.rowHeight = 50
-        myTable.dataSource = self
-        myTable.delegate = self
+    func constraintTable(){
+        tableVW.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        tableVW.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        tableVW.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        tableVW.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        tableVW.register(UINib(nibName: "CastomViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableVW.rowHeight = 50
+        tableVW.dataSource = self
+        tableVW.delegate = self
     }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myTable.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         let webVC = WikiVC()
-        webVC.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Exit", style: .done, target: self, action: #selector(dismis))
-        let nameCountry = countryArray[indexPath.row].name.common
-        webVC.title = nameCountry
+            webVC.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Exit", style: .done, target: self, action: #selector(onBackClick))
+        let nameCountry = JSON.countryArray[indexPath.row].name.common
+            webVC.title = nameCountry
         let encodedCountry = nameCountry.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
-        webVC.search = "https://en.wikipedia.org/wiki/\(encodedCountry!)"
+            webVC.search = "https://en.wikipedia.org/wiki/\(encodedCountry!)"
         let navigation = UINavigationController(rootViewController: webVC)
         present(navigation, animated: true)
     }
     
-    @objc func dismis() {
+    @objc func onBackClick() {
         dismiss(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countryArray.count
+        return JSON.countryArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
-        let flagCountry = countryArray[indexPath.row].flag?.capitalized
-        let nameCountry = countryArray[indexPath.row].name.common.capitalized
-        cell.textLabel?.text = "\(flagCountry ?? "🇧🇶")  \(nameCountry)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CastomViewCell
+        let nameCountry = JSON.countryArray[indexPath.row].name.common.capitalized
+        let flagImage = JSON.countryArray[indexPath.row].flags.png
+        let url = URL(string: flagImage)
+        let data = try? Data(contentsOf: url!)
+        let imageCell = UIImage(data: data!)
+            cell.countryLabel.text = nameCountry
+            cell.ImageCountryView.image = imageCell
+
         return cell
     }
-    
-    func readJSON(completed: @escaping () -> ()){
-        let urlString = "https://restcountries.com/v3.1/all"
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            guard let data = data else { return }
-            guard error == nil else { return }
-            
-            do{
-                self.countryArray = try JSONDecoder().decode([Country].self, from: data)
-                self.countryArray.sort(by: { $0.name.common < $1.name.common})
-                DispatchQueue.main.async {
-                    completed()
-                }
-            } catch let error {
-                print(error)
-            }
-        }).resume()
-    }
 }
+
