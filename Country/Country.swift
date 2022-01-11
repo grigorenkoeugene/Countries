@@ -8,15 +8,15 @@
 import Foundation
 
 struct Country: Codable {
-    let name: NameCountry
-    var flags: FlagCountry
+    let name: CountryName
+    var flags: CountryFlag
 }
 
-struct NameCountry: Codable {
+struct CountryName: Codable {
     let common: String
 }
 
-struct FlagCountry: Codable {
+struct CountryFlag: Codable {
     let png: String
 }
 

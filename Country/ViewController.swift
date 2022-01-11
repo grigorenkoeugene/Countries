@@ -20,17 +20,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(tableVW)
+
         constraintTable()
         JSON.readJSON { self.tableVW.reloadData() }
     }
     
+
     func constraintTable(){
-        tableVW.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        tableVW.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        tableVW.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        tableVW.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            tableVW.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tableVW.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            tableVW.widthAnchor.constraint(equalTo: view.widthAnchor),
+            tableVW.heightAnchor.constraint(equalTo: view.heightAnchor)
+        ])
         tableVW.register(UINib(nibName: "CastomViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        tableVW.rowHeight = 50
+        tableVW.estimatedRowHeight = 44
         tableVW.dataSource = self
         tableVW.delegate = self
     }
@@ -63,10 +67,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let nameCountry = JSON.countryArray[indexPath.row].name.common.capitalized
         let flagImage = JSON.countryArray[indexPath.row].flags.png
         let url = URL(string: flagImage)
-        let data = try? Data(contentsOf: url!)
-        let imageCell = UIImage(data: data!)
             cell.countryLabel.text = nameCountry
-            cell.ImageCountryView.image = imageCell
+        cell.ImageCountryView.loadImag(fromURL: url!)
 
         return cell
     }

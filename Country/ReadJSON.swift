@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
-protocol read {
+protocol Read {
     func readJSON(completed: @escaping () -> ())
 }
     
-class ReadJSON: read {
+class ReadJSON: Read {
     
     var countryArray = [Country]()
     
@@ -26,7 +27,8 @@ class ReadJSON: read {
             do{
                 self.countryArray = try JSONDecoder().decode([Country].self, from: data)
                 self.countryArray.sort(by: { $0.name.common < $1.name.common})
-                DispatchQueue.main.sync {
+                DispatchQueue.main.async {
+                    
                     completed()
                 }
             } catch let error {
@@ -34,4 +36,20 @@ class ReadJSON: read {
             }
         }).resume()
     }
+    
+    
+
+//    func Umage(comp: @escaping () -> ()) -> UIImage {
+//        for i in countryArray {
+//            let flagImage = i.flags.png
+//            let url = URL(string: flagImage)
+//            let data = try? Data(contentsOf: url!)
+//            imageCell = UIImage(data: data!)
+//            DispatchQueue.main.async {
+//                comp()
+//            }
+//        }
+//        return imageCell!
+//
+//    }
 }

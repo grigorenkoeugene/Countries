@@ -10,7 +10,7 @@ import UIKit
 class CastomViewCell: UITableViewCell {
 
     @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var ImageCountryView: UIImageView!
+    @IBOutlet weak var ImageCountryView: LazyImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

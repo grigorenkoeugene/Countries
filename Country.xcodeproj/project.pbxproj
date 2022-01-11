@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450C739E278D80120088A17C /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C739D278D80120088A17C /* LazyImageView.swift */; };
 		4569BD4927870AEA00031E53 /* ReadJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569BD4827870AE900031E53 /* ReadJSON.swift */; };
 		4569BD4E278718D000031E53 /* CastomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569BD4C278718D000031E53 /* CastomViewCell.swift */; };
 		4569BD4F278718D000031E53 /* CastomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4569BD4D278718D000031E53 /* CastomViewCell.xib */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		450C739D278D80120088A17C /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
 		4569BD4827870AE900031E53 /* ReadJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSON.swift; sourceTree = "<group>"; };
 		4569BD4C278718D000031E53 /* CastomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastomViewCell.swift; sourceTree = "<group>"; };
 		4569BD4D278718D000031E53 /* CastomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastomViewCell.xib; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				45F22BAF277B259B00732827 /* SceneDelegate.swift */,
 				45F22BE2277B3A8900732827 /* Model */,
 				45F22BB1277B259B00732827 /* ViewController.swift */,
+				450C739D278D80120088A17C /* LazyImageView.swift */,
 				45C69F0B27834F8400BE8EA9 /* WikiVC.swift */,
 				4569BD4827870AE900031E53 /* ReadJSON.swift */,
 				4569BD4C278718D000031E53 /* CastomViewCell.swift */,
@@ -282,6 +285,7 @@
 				4569BD4E278718D000031E53 /* CastomViewCell.swift in Sources */,
 				45F22BB2277B259B00732827 /* ViewController.swift in Sources */,
 				45F22BAE277B259B00732827 /* AppDelegate.swift in Sources */,
+				450C739E278D80120088A17C /* LazyImageView.swift in Sources */,
 				4569BD4927870AEA00031E53 /* ReadJSON.swift in Sources */,
 				45C69F0C27834F8400BE8EA9 /* WikiVC.swift in Sources */,
 				45F22BB0277B259B00732827 /* SceneDelegate.swift in Sources */,
