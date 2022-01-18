@@ -64,12 +64,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CastomViewCell
+        cell.tag = indexPath.row
         let nameCountry = JSON.countryArray[indexPath.row].name.common.capitalized
         let flagImage = JSON.countryArray[indexPath.row].flags.png
         let url = URL(string: flagImage)
-            cell.countryLabel.text = nameCountry
-        cell.ImageCountryView.loadImag(fromURL: url!)
-
+            if let url = url {
+                if(cell.tag == indexPath.row) {
+                    cell.ImageCountryView.loadImage(fromURL: url)
+                }
+            }
+        
+        cell.countryLabel.text = nameCountry
+        
         return cell
     }
 }

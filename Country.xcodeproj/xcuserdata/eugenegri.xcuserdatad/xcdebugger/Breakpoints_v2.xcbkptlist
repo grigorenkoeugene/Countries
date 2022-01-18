@@ -356,5 +356,117 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7FBCA18-7DC1-4F14-96FA-45D251272679"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Country/LazyImageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "loadImage(fromURL:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C7FBCA18-7DC1-4F14-96FA-45D251272679 - 2dafb26ccdb1c79e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Country.LazyImageView.loadImage(fromURL: Foundation.URL) -&gt; ()"
+                  moduleName = "Country"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenegri/Documents/Country/Country/LazyImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "560">
+               </Location>
+               <Location
+                  uuid = "C7FBCA18-7DC1-4F14-96FA-45D251272679 - 3d5b1c6e41d5cb51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Country.LazyImageView.loadImage(fromURL: Foundation.URL) -&gt; ()"
+                  moduleName = "Country"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenegri/Documents/Country/Country/LazyImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A777A27-9448-4B31-A74B-6E7E24D82BDA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Country/LazyImageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "loadImage(fromURL:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE917678-4ACE-43DB-A745-58052C55F318"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Country/LazyImageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "loadImage(fromURL:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AE917678-4ACE-43DB-A745-58052C55F318 - ac9b33c9c7d420c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Country.LazyImageView.loadImage(fromURL: Foundation.URL) -&gt; ()"
+                  moduleName = "Country"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenegri/Documents/Country/Country/LazyImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "435">
+               </Location>
+               <Location
+                  uuid = "AE917678-4ACE-43DB-A745-58052C55F318 - fc3a8fc5c3cb81b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Country.LazyImageView.loadImage(fromURL: Foundation.URL) -&gt; ()"
+                  moduleName = "Country"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eugenegri/Documents/Country/Country/LazyImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "101">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
