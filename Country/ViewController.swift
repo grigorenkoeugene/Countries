@@ -20,9 +20,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(tableVW)
-
+        title = "asdf"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         constraintTable()
-        JSON.readJSON { self.tableVW.reloadData() }
+        JSON.readJSON { self.tableVW.reloadData()} 
     }
     
 
@@ -70,13 +71,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let url = URL(string: flagImage)
             if let url = url {
                 if(cell.tag == indexPath.row) {
-                    cell.ImageCountryView.loadImage(fromURL: url)
+                    cell.ImageCountryView.loadImage(url: url)
                 }
             }
         
         cell.countryLabel.text = nameCountry
-        
         return cell
     }
+
 }
 
