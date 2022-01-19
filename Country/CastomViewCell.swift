@@ -10,13 +10,13 @@ import UIKit
 class CastomViewCell: UITableViewCell {
 
     @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var ImageCountryView: UIImageView!
+    @IBOutlet weak var imageCountryView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        countryLabel.lineBreakMode = .byWordWrapping // or NSLineBreakMode.ByWordWrapping
+        countryLabel.lineBreakMode = .byWordWrapping
         countryLabel.numberOfLines = 0
-        ImageCountryView.layer.cornerRadius = ImageCountryView.frame.height / 2
+        imageCountryView.layer.cornerRadius = imageCountryView.frame.height / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

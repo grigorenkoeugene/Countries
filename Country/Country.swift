@@ -9,7 +9,7 @@ import Foundation
 
 struct Country: Codable {
     let name: CountryName
-    var flags: CountryFlag
+    let flags: CountryFlag
 }
 
 struct CountryName: Codable {

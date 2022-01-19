@@ -20,8 +20,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(tableVW)
-        title = "asdf"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         constraintTable()
         JSON.readJSON { self.tableVW.reloadData()} 
     }
@@ -46,17 +44,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let webVC = WikiVC()
-            webVC.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Exit", style: .done, target: self, action: #selector(onBackClick))
         let nameCountry = JSON.countryArray[indexPath.row].name.common
             webVC.title = nameCountry
         let encodedCountry = nameCountry.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
             webVC.search = "https://en.wikipedia.org/wiki/\(encodedCountry!)"
         let navigation = UINavigationController(rootViewController: webVC)
         present(navigation, animated: true)
-    }
-    
-    @objc func onBackClick() {
-        dismiss(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,7 +64,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let url = URL(string: flagImage)
             if let url = url {
                 if(cell.tag == indexPath.row) {
-                    cell.ImageCountryView.loadImage(url: url)
+                    cell.imageCountryView.loadImage(url: url)
                 }
             }
         

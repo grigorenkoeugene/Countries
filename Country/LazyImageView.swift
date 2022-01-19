@@ -10,12 +10,15 @@ import UIKit
 
 extension UIImageView {
     func loadImage(url: URL, cache: URLCache = URLCache.shared) {
+            var imageUrlCompare: URL?
+
             let request = URLRequest(url: url)
+                 imageUrlCompare = url
+                 self.image = nil
             if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
                 self.image = image
                 return
             }
-            //Thread.sleep(forTimeInterval: .random(in: 0.3...1.3))
             URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 guard
                     let data = data,
@@ -26,7 +29,9 @@ extension UIImageView {
                 let cachedData = CachedURLResponse(response: response, data: data)
                 cache.storeCachedResponse(cachedData, for: request)
                 DispatchQueue.main.async {
-                    self.image = image
+                    if imageUrlCompare == url {
+                        self.image = image
+                    }
                 }
             }).resume()
         }
