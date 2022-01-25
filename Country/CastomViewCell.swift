@@ -8,9 +8,8 @@
 import UIKit
 
 class CastomViewCell: UITableViewCell {
-
     @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var imageCountryView: UIImageView!
+    @IBOutlet weak var imageCountryView: LazyImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +23,7 @@ class CastomViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }
 
 

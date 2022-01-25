@@ -8,33 +8,26 @@
 import Foundation
 import UIKit
 
-extension UIImageView {
-    func loadImage(url: URL, cache: URLCache = URLCache.shared) {
-            var imageUrlCompare: URL?
-
-            let request = URLRequest(url: url)
-                 imageUrlCompare = url
-                 self.image = nil
-            if let data = cache.cachedResponse(for: request)?.data, let image = UIImage(data: data) {
-                self.image = image
-                return
-            }
-            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                guard
-                    let data = data,
-                    let response = response,
-                    ((response as? HTTPURLResponse)?.statusCode ?? 500) < 300,
-                    let image = UIImage(data: data)
-                else { return }
-                let cachedData = CachedURLResponse(response: response, data: data)
-                cache.storeCachedResponse(cachedData, for: request)
-                DispatchQueue.main.async {
-                    if imageUrlCompare == url {
-                        self.image = image
-                    }
-                }
-            }).resume()
-        }
+class LazyImageView: UIImageView {
+     
+     var imageUrlCompare: URL?
+    
+     func loadImage(fromURL imageURL: URL){
+         imageUrlCompare = imageURL
+         self.image = nil
+         DispatchQueue.global().async {
+             [weak self] in
+            Thread.sleep(forTimeInterval: .random(in: 0.1...1.3))
+             let request = URLRequest(url: imageURL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+             URLSession.shared.dataTask(with: request) { data, response, error in
+                 if let data = data, let image = UIImage(data: data){
+                     DispatchQueue.main.async {
+                        if self?.imageUrlCompare == imageURL {
+                             self?.image = image
+                         }
+                     }
+                 }
+             }.resume()
+         }
+    }
 }
-
-

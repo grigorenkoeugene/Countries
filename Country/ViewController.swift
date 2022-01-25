@@ -62,12 +62,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let nameCountry = JSON.countryArray[indexPath.row].name.common.capitalized
         let flagImage = JSON.countryArray[indexPath.row].flags.png
         let url = URL(string: flagImage)
-            if let url = url {
-                if(cell.tag == indexPath.row) {
-                    cell.imageCountryView.loadImage(url: url)
-                }
+        if let url = url {
+            if(cell.tag == indexPath.row) {
+                cell.imageCountryView.loadImage(fromURL: url)
             }
-        
+        }
         cell.countryLabel.text = nameCountry
         return cell
     }
